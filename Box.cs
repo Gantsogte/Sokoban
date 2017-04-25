@@ -17,6 +17,8 @@ namespace Sokoban
             this.posBoxX = x;
             this.posBoxY = y;
         }
+
+        //box zurah
         public void DrawBox(int x, int y)
         {
             Console.SetCursorPosition(x, y);
