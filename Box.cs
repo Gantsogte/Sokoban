@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +10,16 @@ namespace Sokoban
     {
         /*Hairtsag, mass ni 3
          Console deer 3 gej zuragdana*/
-        Point positionBox;
+        int posBoxX, posBoxY;
         const int BOXMASS = 3;
-        public Box(Point position)
+        public Box(int x, int y)
         {
-            this.positionBox = position;
+            this.posBoxX = x;
+            this.posBoxY = y;
         }
-        public void DrawBox(Point position)
+        public void DrawBox(int x, int y)
         {
-            Console.SetCursorPosition(position.GetPointX, position.GetPointY);
+            Console.SetCursorPosition(x, y);
             Console.Write('3');
         }
     }
