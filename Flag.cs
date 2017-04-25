@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +9,19 @@ namespace Sokoban
     class Flag
     {
         /*Hairtsagiig avaachih etssiin bairshil
-         Console deer flagiig -1 eer zurna*/
-        Point positionFlag;
-        const int FLAGVALUE = -1;
-        public Flag(Point position)
+         Console deer flagiig 1 eer zurna*/
+        int posFlagX, posFlagY;
+        const int FLAGVALUE = 1;
+        public Flag(int x, int y)
         {
-            this.positionFlag = position;
+            this.posFlagX = x;
+            this.posFlagY = y;
         }
-        public void DrawFlag(Point position)
+
+        //flag zurah
+        public void DrawFlag(int x, int y)
         {
-            Console.SetCursorPosition(position.GetPointX, position.GetPointY);
+            Console.SetCursorPosition(x, y);
             Console.Write('1');
         }
     }
