@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,35 +12,38 @@ namespace Sokoban
          Console deer 5 gej zuragdana*/
         const int LEFT = 1, UP = 2, RIGHT = 3, DOWN = 4;
         const int POWER = 5;
-        Point positionBM;
-        public BoxMan(Point position)
+        int posBM_X, posBM_Y;
+        public BoxMan(int x, int y)
         {
-            this.positionBM = position;
+            this.posBM_X = x;
+            this.posBM_Y = y;
         }
+        //BoxManii bairshiliig zugees ni hamaarch uurchilnu
         public void MoveBM(int direction)
         {
             switch (direction)
             {
                 case LEFT:
-                    //todo
+                    this.posBM_X--;
                     break;
                 case UP:
-                    //todo
+                    this.posBM_Y--;
                     break;
                 case RIGHT:
-                    //todo
+                    this.posBM_X++;
                     break;
                 case DOWN:
-                    //todo
+                    this.posBM_Y++;
                     break;
             }
         }
-        public void DrawBM(Point pos, Point lastPos)
+        //zurah 
+        public void DrawBM(int x0, int y0, int x, int y)
         {
             /*Shine position deer 5 zurangaa umnuh position deer hooson zai zurah buyu arilgana*/
-            Console.SetCursorPosition(lastPos.getPointX, lastPos.getPointY);
+            Console.SetCursorPosition(x0, y0);
             Console.Write(' ');
-            Console.SetCursorPosition(pos.GetPointX, pos.GetPointY);
+            Console.SetCursorPosition(x, y);
             Console.Write('5');
         }
     }
