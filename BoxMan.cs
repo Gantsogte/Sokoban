@@ -11,40 +11,42 @@ namespace Sokoban
         /*Toglogchiin udirdah boxman
          Console deer 5 gej zuragdana*/
         const int LEFT = 1, UP = 2, RIGHT = 3, DOWN = 4;
-        const int POWER = 5;
-        int posBM_X, posBM_Y;
-        public BoxMan(int x, int y)
+        public static int BOXMAN = 5; //also 5 means in map BOXMAN
+        int posBoxManX, posBoxManY;
+        public BoxMan(int posX, int poxY)
         {
-            this.posBM_X = x;
-            this.posBM_Y = y;
+            this.posBoxManX = posX;
+            this.posBoxManY = poxY;
         }
+
+        //positioniih ni utgiig avna
+        public int GetBoxManX()
+        {
+            return this.posBoxManX;
+        }
+        public int GetBoxManY()
+        {
+            return this.posBoxManY;
+        }
+
         //BoxManii bairshiliig zugees ni hamaarch uurchilnu
         public void MoveBM(int direction)
         {
             switch (direction)
             {
                 case LEFT:
-                    this.posBM_X--;
+                    this.posBoxManX--;
                     break;
                 case UP:
-                    this.posBM_Y--;
+                    this.posBoxManY--;
                     break;
                 case RIGHT:
-                    this.posBM_X++;
+                    this.posBoxManX++;
                     break;
                 case DOWN:
-                    this.posBM_Y++;
+                    this.posBoxManY++;
                     break;
             }
-        }
-        //zurah 
-        public void DrawBM(int x0, int y0, int x, int y)
-        {
-            /*Shine position deer 5 zurangaa umnuh position deer hooson zai zurah buyu arilgana*/
-            Console.SetCursorPosition(x0, y0);
-            Console.Write(' ');
-            Console.SetCursorPosition(x, y);
-            Console.Write('5');
         }
     }
 }
